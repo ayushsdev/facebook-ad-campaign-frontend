@@ -21,6 +21,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/django">Django</RouterLink>
       <RouterLink to="/chart">Chart</RouterLink>
+      <RouterLink to="/advclicks">Ads-Clicks</RouterLink>
     </nav>
   </header>
 

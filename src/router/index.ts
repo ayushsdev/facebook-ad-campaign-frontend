@@ -32,6 +32,11 @@ const router = createRouter({
       name: 'chart',
       component: () => import('../views/FeatureImportanceChart.vue')
     },
+    {
+      path: '/advclicks',
+      name: 'clicks',
+      component: () => import('../views/AdSpendVsClicks.vue')
+    },
 
   ]
 })
