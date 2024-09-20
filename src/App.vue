@@ -20,6 +20,7 @@ import HelloWorld from './components/HelloWorld.vue'
     <nav>
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/django">Django</RouterLink>
+      <RouterLink to="/chart">Chart</RouterLink>
     </nav>
   </header>
 

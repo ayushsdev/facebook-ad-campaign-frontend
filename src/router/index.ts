@@ -26,7 +26,13 @@ const router = createRouter({
       path: '/djangotest',
       name: 'djangotest',
       component: () => import('../views/AnotherDjango.vue')
-    }
+    },
+    {
+      path: '/chart',
+      name: 'chart',
+      component: () => import('../views/FeatureImportanceChart.vue')
+    },
+
   ]
 })
 
