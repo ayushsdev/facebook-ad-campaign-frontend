@@ -13,7 +13,7 @@
     },
     mounted() {
       // Use the fetch API to make a GET request to the Django API
-      fetch('https://klaviyo-django-758b15dfdb44.herokuapp.com/api/hello')
+      fetch('https://klaviyo-django-758b15dfdb44.herokuapp.com/api/hello/')
         .then(response => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
