@@ -4,90 +4,56 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <!-- <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div class="animated-gradient min-h-[50vh] w-full flex items-center justify-center">
+    <h1 class="font-bold text-4xl text-black text-center">Facebook Ad Campaign Dashboard</h1>
+  </div>
+<!-- Navigation Links Section (Horizontal Row) -->
+<div class="flex flex-row items-center justify-center mt-8 space-x-4">
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <RouterLink 
+      to="/ctr" 
+      class="px-4 py-2 text-white bg-purple-500 rounded hover:bg-purple-600 transition-all duration-200"
+    >
+      Click-Through Rate Prediction
+    </RouterLink>
+    <RouterLink 
+      to="/advclicks" 
+      class="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600 transition-all duration-200"
+    >
+      Ads-Clicks
+    </RouterLink>
+  </div>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header> -->
-  <header>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/django">Django</RouterLink>
-      <RouterLink to="/chart">Chart</RouterLink>
-      <RouterLink to="/advclicks">Ads-Clicks</RouterLink>
-    </nav>
-  </header>
-
+  <!-- Router View -->
   <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+@import 'tailwindcss/tailwind.css';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 0%;
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
+  50% {
+    background-position: 100% 100%;
   }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  100% {
+    background-position: 0% 0%;
   }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+}
+/* Apply the animation to the gradient background */
+.animated-gradient {
+  /* @apply min-h-screen w-full flex items-center justify-center; */
+  background-color: hsla(336, 83%, 59%, 1);
+  background-image: radial-gradient(at 62% 89%, hsla(359, 100%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 3% 34%, hsla(241, 40%, 45%, 1) 0px, transparent 50%),
+    radial-gradient(at 34% 98%, hsla(18, 100%, 48%, 1) 0px, transparent 50%),
+    radial-gradient(at 86% 77%, hsla(289, 100%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 31% 2%, hsla(360, 100%, 68%, 1) 0px, transparent 50%),
+    radial-gradient(at 49% 83%, hsla(247, 100%, 60%, 1) 0px, transparent 50%),
+    radial-gradient(at 71% 50%, hsla(240, 0%, 100%, 1) 0px, transparent 50%);
+  background-size: 200% 200%;
+  animation: moveGradient 20s ease infinite;
 }
 </style>

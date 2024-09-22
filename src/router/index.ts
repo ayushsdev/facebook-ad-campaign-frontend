@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ClickThroughRate from '../views/ClickThroughRate.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +8,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: ClickThroughRate
     },
     {
       path: '/about',
@@ -28,9 +29,9 @@ const router = createRouter({
       component: () => import('../views/AnotherDjango.vue')
     },
     {
-      path: '/chart',
-      name: 'chart',
-      component: () => import('../views/FeatureImportanceChart.vue')
+      path: '/ctr',
+      name: 'CTR',
+      component: () => import('../views/ClickThroughRate.vue')
     },
     {
       path: '/advclicks',
