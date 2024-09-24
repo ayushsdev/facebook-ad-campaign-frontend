@@ -27,8 +27,10 @@
     methods: {
       async fetchAdSpendData() {
         try {
+          const apiUrl = import.meta.env.VITE_API_URL;
+
           // Use fetch to send a GET request to the Django API endpoint
-          const response = await fetch('https://klaviyo-django-758b15dfdb44.herokuapp.com/api/ad_spend_vs_clicks/');
+          const response = await fetch(`${apiUrl}/ad_spend_vs_clicks/`);
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }

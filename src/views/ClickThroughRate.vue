@@ -37,9 +37,15 @@ export default {
   methods: {
     async fetchFeatureImportanceData() {
       try {
-        const response = await fetch('https://klaviyo-django-758b15dfdb44.herokuapp.com/api/feature_importances/');
+        const apiUrl = import.meta.env.VITE_API_URL;
+        console.log(apiUrl);
+        console.log(`${apiUrl}/feature_importances/`)
+
+        const response = await fetch(`${apiUrl}/feature_importances/`);
         if (!response.ok) throw new Error('Failed to fetch feature importance data.');
+        console.log(response);
         const data = await response.json();
+        console.log(data);
         this.featureImportanceData = data;
         this.renderFeatureImportanceChart();
       } catch (error) {
@@ -110,7 +116,9 @@ export default {
       try {
         const response = await fetch('https://klaviyo-django-758b15dfdb44.herokuapp.com/api/ad_spend_vs_clicks/');
         if (!response.ok) throw new Error('Failed to fetch ad spend vs clicks data.');
+        console.log(response);
         const data = await response.json();
+        console.log(data);
         this.adSpendData = data.spent;
         this.clicksData = data.clicks;
         this.renderAdSpendChart();
